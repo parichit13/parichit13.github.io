@@ -1,58 +1,362 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Parichit Kotawala - Portfolio">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="portfolio">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>portfolio</title>
-  <link rel="manifest" href="manifest.json">
-
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = '830479201';
-  </script>
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Parichit Kotawala — Head of Product Engineering with 10+ years building products, leading teams, and architecting scalable systems." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Parichit Kotawala</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        }
-      }).then(function(engineInitializer) {
-        return engineInitializer.initializeEngine();
-      }).then(function(appRunner) {
-        return appRunner.runApp();
-      });
-    });
-  </script>
+
+  <!-- NAV -->
+  <header id="navbar">
+    <nav>
+      <a href="#hero" class="logo" aria-label="home">
+        <svg width="42" height="48" viewBox="0 0 100 115" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,3 97,28 97,87 50,112 3,87 3,28" fill="none" stroke="#64ffda" stroke-width="5"/>
+          <text x="50" y="76" text-anchor="middle" fill="#64ffda" font-family="SFMono,monospace" font-size="52" font-weight="600">P</text>
+        </svg>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <ol>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+        <a href="https://canva.link/inrjn91sw6l0ez1" class="btn-outline" target="_blank" rel="noopener noreferrer">Resume</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <button class="mobile-close" id="mobile-close" aria-label="Close menu">&times;</button>
+    <nav>
+      <ol>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+      <a href="https://canva.link/inrjn91sw6l0ez1" class="btn-outline" target="_blank" rel="noopener noreferrer">Resume</a>
+    </nav>
+  </div>
+
+  <!-- SIDEBAR LEFT -->
+  <aside class="sidebar sidebar-left" aria-label="Social links">
+    <ul class="social-list">
+      <li>
+        <a href="https://github.com/parichit13" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <img src="assets/assets/svg/github.svg" alt="GitHub" />
+        </a>
+      </li>
+      <li>
+        <a href="https://linkedin.com/in/parichit-kotawala" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <img src="assets/assets/svg/linkedIn.svg" alt="LinkedIn" />
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/parichit13" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+          <img src="assets/assets/svg/twitter.svg" alt="Twitter" />
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/parichit13" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <img src="assets/assets/svg/instagram.svg" alt="Instagram" />
+        </a>
+      </li>
+      <li>
+        <a href="https://stackoverflow.com/users/parichit13" aria-label="Stack Overflow" target="_blank" rel="noopener noreferrer">
+          <img src="assets/assets/svg/stackoverflow.svg" alt="Stack Overflow" />
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- SIDEBAR RIGHT -->
+  <aside class="sidebar sidebar-right" aria-label="Email">
+    <a href="mailto:parichit.kumark@gmail.com" class="email-link">parichit.kumark@gmail.com</a>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HERO -->
+    <section id="hero">
+      <p class="greeting">Hi, my name is</p>
+      <h1 class="hero-name">Parichit.</h1>
+      <h2 class="hero-tagline">I build products, lead engineering teams,<br class="desktop-break" /> and architect scalable systems.</h2>
+      <p class="hero-desc">
+        I'm an engineering leader and full-stack engineer with 10+ years of experience building products from 0→1,
+        managing cross-functional teams, and delivering scalable SaaS platforms. Currently serving as
+        <a href="https://ostosec.com" target="_blank" rel="noopener noreferrer">Founding Head of Product Engineering at Osto Cybersecurity</a>.
+      </p>
+      <a href="#work" class="btn-outline hero-cta">Check Out My Work!</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2 class="section-heading"><span class="num">01.</span> About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Hello! I'm Parichit — an engineering leader and full-stack product engineer with over 10 years of experience
+            turning ideas into real, shipped products. I thrive at the intersection of product thinking, system design,
+            and hands-on engineering.
+          </p>
+          <p>
+            I've founded companies, led teams, and built everything from server-driven micro-frontend frameworks to full
+            cybersecurity SaaS platforms. My work spans mobile (Android, Flutter, React Native), web (Next.js, React),
+            backend (Node.js, Go), infrastructure (AWS, Docker, Kubernetes), and product leadership — sprint planning,
+            roadmapping, SRE, and engineering culture.
+          </p>
+          <p>
+            I'm currently the <strong>Founding Head of Product Engineering at Osto Cybersecurity</strong>, where I manage
+            a 15-person team, own the full product roadmap, and led "Product Revamp V3" — re-architecting 9 core systems
+            with zero-downtime deployments and achieving the "SaaS Ready" milestone.
+          </p>
+          <p>Here are a few technologies I've been working with recently:</p>
+          <ul class="skills-list">
+            <li>Node.js / Go (Gin)</li>
+            <li>React / Next.js</li>
+            <li>Flutter / React Native</li>
+            <li>AWS / Docker / Kubernetes</li>
+            <li>MongoDB / PostgreSQL / Redis</li>
+            <li>AI Apps &amp; MCP Servers</li>
+          </ul>
+        </div>
+        <div class="about-img-wrapper">
+          <img src="assets/assets/svg/profile-pic.jpeg" alt="Parichit Kotawala" />
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2 class="section-heading"><span class="num">02.</span> Where I've Worked</h2>
+      <div class="exp-container">
+        <div class="tab-list" role="tablist" aria-label="Work experience">
+          <button class="tab-btn active" role="tab" aria-selected="true"  data-tab="osto">Osto</button>
+          <button class="tab-btn"         role="tab" aria-selected="false" data-tab="lumara">Lumara Jewels</button>
+          <button class="tab-btn"         role="tab" aria-selected="false" data-tab="urban">Urban Company</button>
+          <button class="tab-btn"         role="tab" aria-selected="false" data-tab="nearbuy">Nearbuy</button>
+          <button class="tab-btn"         role="tab" aria-selected="false" data-tab="birdeye">Birdeye Inc</button>
+          <button class="tab-btn"         role="tab" aria-selected="false" data-tab="mirrors">Mirrors</button>
+        </div>
+        <div class="tab-panels">
+
+          <div class="tab-panel active" id="tab-osto" role="tabpanel">
+            <h3>Founding Head of Product Engineering <span class="company">@ <a href="https://ostosec.com" target="_blank" rel="noopener noreferrer">Osto Cybersecurity</a></span></h3>
+            <p class="date">Nov 2025 – Present</p>
+            <ul>
+              <li>Acting Head of Engineering managing a 15-person team across frontend, backend, DevOps, and security — owning sprint planning, performance reviews, growth, and day-to-day execution.</li>
+              <li>Led "Product Revamp V3," re-architecting 9 core systems (WAF, ZTNA, Customer Dashboard, App/File DLP, EDR, Compliance Automation, SAST, Website/Docs, DevOps platform) with zero-downtime migrations for all customer orgs.</li>
+              <li>Built the engineering reliability foundation — CI/CD pipelines, staging environments, versioning, application monitoring, distributed tracing, and request/response logging — maturing the platform toward SaaS readiness.</li>
+              <li>Drove SRE and production reliability: triaged live outages (ingress timeouts, container memory crashes, pod-down alerts) and pushed systemic fixes like CI-integrated WAF test suites to prevent recurrence.</li>
+              <li>Delivered the "SaaS Ready" milestone: coordinated 70+ tracked tasks in a single month (3 revamps, 4 new modules, 3 features, 7 improvements, 55+ bug fixes).</li>
+              <li>Authored technical documentation, HLD/architecture diagrams, and product guides to support customer onboarding and enterprise deals.</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-lumara" role="tabpanel">
+            <h3>Cofounder &amp; CTO <span class="company">@ <a href="#" class="link">Lumara Jewels</a></span></h3>
+            <p class="date">2023 – 2025</p>
+            <ul>
+              <li>Founded and led the engineering function 0→1: brand identity, UX research and personas, design system, and end-to-end UX flows for desktop and mobile in Figma.</li>
+              <li>Architected the full system from LLD to HLD — microservices, schema design, API gateway, caching/CDN — and built the backend (Node.js, Express, MongoDB) covering auth, catalog, pricing engine, orders, and post-order support.</li>
+              <li>Launched a high-performance Next.js storefront with SSR/ISR and CDN caching achieving strong Lighthouse scores; built a custom CRM dashboard for orders, payments, offers, and operations.</li>
+              <li>Set up full monitoring (health checks, error tracking, custom event tracking with ad-blocker-evasion routing) and owned the complete DevOps lifecycle — pipelines, production monitoring, bug resolution, and cost-optimized cloud infrastructure.</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-urban" role="tabpanel">
+            <h3>Team Lead (SDE-III) <span class="company">@ <a href="https://urbancompany.com" target="_blank" rel="noopener noreferrer">Urban Company</a></span></h3>
+            <p class="date">2021 – 2024</p>
+            <ul>
+              <li>Vertical head for the complete customer selection journey on the Urban Company app — owning development, product analysis, and A/B experimentation across a full team.</li>
+              <li>Singlehandedly built a server-driven micro-frontend bundling &amp; OTA deployment system (custom bundler + in-house React Native framework "Orion") with versioning, fault tolerance, crash handling, and dependency-aware rollback support.</li>
+              <li>Shipped a backend-driven UI, Navigation, and Flow control framework enabling screen flow changes without app releases, targeting Android, iOS, and Web from a single React Native codebase.</li>
+              <li>Consistently participated in Design Sprints with product and design teams for new features and services to improve UI/UX quality and customer satisfaction.</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-nearbuy" role="tabpanel">
+            <h3>Senior Software Developer <span class="company">@ <a href="#" class="link">Nearbuy</a></span></h3>
+            <p class="date">2020 – 2021</p>
+            <ul>
+              <li>Built and released the Android frontend and backend for "Market by Nearbuy" — a hyperlocal e-commerce app launched in response to new market needs raised by COVID conditions.</li>
+              <li>Implemented Kotlin-first app architecture to significantly improve performance, with modular backend micro-services for on-demand delivery.</li>
+              <li>Worked closely with product teams to ensure full feature coverage and better UI/UX across a large-scale Android audience.</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-birdeye" role="tabpanel">
+            <h3>Software Engineer <span class="company">@ <a href="#" class="link">Birdeye Inc</a></span></h3>
+            <p class="date">2018 – 2020</p>
+            <ul>
+              <li>Designed and developed an integrated system with multiple web scrapers, REST APIs, and browser technologies to aggregate millions of reviews daily across thousands of websites.</li>
+              <li>Worked with Headless Chrome, Phantom.js, Kafka, and AWS Microservices for development and maintenance of high-throughput data pipelines.</li>
+              <li>Collaborated closely with the app development team on building real-time bot chat features.</li>
+            </ul>
+          </div>
+
+          <div class="tab-panel" id="tab-mirrors" role="tabpanel">
+            <h3>Lead Developer <span class="company">@ <a href="#" class="link">Mirrors</a></span></h3>
+            <p class="date">2016 – 2017</p>
+            <ul>
+              <li>Designed and developed a merchant discovery Android application for the wellness industry, allowing users to find and book appointments at salons, spas, gyms, and more.</li>
+              <li>Designed and developed the complete backend architecture, services, and APIs using a Node.js, Express, and MongoDB stack.</li>
+              <li>Worked with reactive frameworks and architecture patterns including Retrofit, OkHttp, RxJava, and MVC.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK / PROJECTS -->
+    <section id="work">
+      <h2 class="section-heading"><span class="num">03.</span> My Noteworthy Projects</h2>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="card-top">
+            <img src="assets/assets/svg/folder.svg" class="folder-icon" alt="" aria-hidden="true" />
+            <div class="card-links">
+              <a href="#" aria-label="External link" class="icon-link">
+                <img src="assets/assets/svg/externalLink.svg" alt="External link" />
+              </a>
+            </div>
+          </div>
+          <h3>Lumara Jewels Platform</h3>
+          <p>Full-stack e-commerce platform built 0→1: high-performance Next.js storefront with SSR/ISR, Node.js microservices backend, custom CRM dashboard, and complete DevOps lifecycle management with cost-optimized cloud infrastructure.</p>
+          <ul class="tech-tags">
+            <li>Next.js</li><li>Node.js</li><li>MongoDB</li><li>AWS</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top">
+            <img src="assets/assets/svg/folder.svg" class="folder-icon" alt="" aria-hidden="true" />
+            <div class="card-links">
+              <a href="#" aria-label="External link" class="icon-link">
+                <img src="assets/assets/svg/externalLink.svg" alt="External link" />
+              </a>
+            </div>
+          </div>
+          <h3>Orion Micro-Frontend Framework</h3>
+          <p>Server-driven micro-frontend bundling &amp; OTA deployment system at Urban Company. Custom bundler splits a single codebase into micro-frontend chunks with versioning, fault tolerance, crash handling, and dependency-aware rollbacks.</p>
+          <ul class="tech-tags">
+            <li>React Native</li><li>Node.js</li><li>OTA Deploy</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top">
+            <img src="assets/assets/svg/folder.svg" class="folder-icon" alt="" aria-hidden="true" />
+            <div class="card-links">
+              <a href="#" aria-label="External link" class="icon-link">
+                <img src="assets/assets/svg/externalLink.svg" alt="External link" />
+              </a>
+            </div>
+          </div>
+          <h3>Osto Product Revamp V3</h3>
+          <p>Re-architected 9 core cybersecurity systems (WAF, ZTNA, EDR, DLP, Compliance Automation, SAST and more) with zero-downtime migrations. Delivered the "SaaS Ready" milestone with 70+ tracked tasks in a single month.</p>
+          <ul class="tech-tags">
+            <li>React</li><li>Node.js</li><li>Docker</li><li>Kubernetes</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top">
+            <img src="assets/assets/svg/folder.svg" class="folder-icon" alt="" aria-hidden="true" />
+            <div class="card-links">
+              <a href="#" aria-label="External link" class="icon-link">
+                <img src="assets/assets/svg/externalLink.svg" alt="External link" />
+              </a>
+            </div>
+          </div>
+          <h3>Market by Nearbuy</h3>
+          <p>A new hyperlocal e-commerce app built from scratch targeting market needs raised by COVID conditions. Implemented Kotlin-first architecture with modular backend micro-services for on-demand delivery.</p>
+          <ul class="tech-tags">
+            <li>Android</li><li>Kotlin</li><li>Node.js</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top">
+            <img src="assets/assets/svg/folder.svg" class="folder-icon" alt="" aria-hidden="true" />
+            <div class="card-links">
+              <a href="#" aria-label="External link" class="icon-link">
+                <img src="assets/assets/svg/externalLink.svg" alt="External link" />
+              </a>
+            </div>
+          </div>
+          <h3>encryptIt</h3>
+          <p>A universal file encrypter built at DRDO that encrypts any file at the bit level using multiple encryption algorithms (DES, AES) while retaining the file's name, size, and location. Safely transmittable over any network protocol.</p>
+          <ul class="tech-tags">
+            <li>Android</li><li>Java</li><li>Cryptography</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div class="card-top">
+            <img src="assets/assets/svg/folder.svg" class="folder-icon" alt="" aria-hidden="true" />
+            <div class="card-links">
+              <a href="#" aria-label="External link" class="icon-link">
+                <img src="assets/assets/svg/externalLink.svg" alt="External link" />
+              </a>
+            </div>
+          </div>
+          <h3>Sentiment Analyser</h3>
+          <p>An NLP program using Python, Java, and MATLAB that processes speech input, parses constituent words, and identifies emotion on a 3-point scale (Happy, Neutral, Sad) via a Recursive Tensor Neural Network.</p>
+          <ul class="tech-tags">
+            <li>Python</li><li>Java</li><li>MATLAB</li><li>NLP</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <p class="section-overline">04. What's next?</p>
+      <h2 class="contact-heading">Get In Touch</h2>
+      <p class="contact-desc">
+        My inbox is always open. Whether you have a question, an opportunity, or just want to say hi,
+        I'll try my best to get back to you!
+      </p>
+      <div class="contact-buttons">
+        <a href="https://linkedin.com/in/parichit-kotawala" class="btn-contact" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:parichit.kumark@gmail.com" class="btn-contact">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email
+        </a>
+        <a href="tel:+919999254405" class="btn-contact">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Phone
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Built &amp; Developed by Parichit</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
